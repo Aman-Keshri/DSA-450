@@ -1,2 +1,5 @@
 # DSA-450
-It Contains all codes that I have solved till date
+# Striver 180
+#coding Ninjas DSA
+
+All Coding Questions from diffrent SDE Sheets that I practiced.
