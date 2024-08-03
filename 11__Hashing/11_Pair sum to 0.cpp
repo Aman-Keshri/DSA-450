@@ -9,7 +9,7 @@ The first line of input contains an integer, that denotes the value of the size 
 The following line contains N space separated integers, that denote the value of the elements of the array.
 
 Output format :
-The first and only line of output contains the count of pair of elements in the array which sum up to 0. 
+The first and only line of output contains the count of pair of elements in the array which sum up to 0.
 
 Constraints :
 0 <= N <= 10^4
@@ -24,28 +24,34 @@ Sample Output 1:
 2
 */
 
-#include<unordered_map>
-int pairSum(int *arr, int n) {
-	// Write your code here
+#include <unordered_map>
+int pairSum(int *arr, int n)
+{
+    // Write your code here
     unordered_map<int, int> map;
-    
-    for(int i = 0; i < n; i++) {
+
+    for (int i = 0; i < n; i++)
+    {
         map[arr[i]]++;
     }
-    
+
     int count = 0;
-    
-    for(int i = 0; i < n; i++) {
-        if(arr[i] == 0 and map[arr[i]] > 1) {
-            count += ((map[arr[i]]) *(map[arr[i]] - 1)) / 2;// n choose 2
+
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == 0 and map[arr[i]] > 1)
+        {
+            count += ((map[arr[i]]) * (map[arr[i]] - 1)) / 2; // n choose 2
             map[arr[i]] = 0;
-        } else if(map[-arr[i]] and arr[i] != 0) {
+        }
+        else if (map[-arr[i]] and arr[i] != 0)
+        {
             count += map[arr[i]] * map[-arr[i]];
             map[arr[i]] = 0;
             map[-arr[i]] = 0;
         }
     }
-    
+
     return count;
 }
 
